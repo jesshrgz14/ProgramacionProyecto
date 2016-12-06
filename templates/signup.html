@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{%block content%}
+	<div class="page-header" >
+		<div class="container text-center" >
+  			<h1><b>Sign up</b></h1>
+  		</div>
+  	</div>
+	<div class="container">
+		<form class="col-md-4 col-sm-offset-4" method="POST" enctype="multipart/form-data">
+			{% csrf_token %} 
+
+		{{ form.as_p }}
+
+			<br>
+				<button type="submit" class="btn btn-primary">Save</button>
+				<button type="sumbit" class="btn btn-primary">Clear</button>
+
+		</form>
+	</div>
+
+{%endblock%}

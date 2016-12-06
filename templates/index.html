@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{%block content%}
+<div class="container">
+
+{% if user.is_authenticated %}
+
+			<center><h2>Bienvenido {{ user.username }}</h2></center>
+	 
+
+
+	  	{% else %}
+
+	  	<div class="container text-center">
+		<form class="col-md-4 col-sm-offset-4" method="POST" enctype="multipart/form-data">
+		  		{% csrf_token %}
+			  			<div class="form-group">
+			  				<label for="UserName:">Username: </label>
+			  				<input type="text" class="form-control" name="username" placeholder="User">
+			  			</div>
+			  			<div class="form-group">
+			  				<label for="Password:">Password: </label>
+			  				<input type="password" class="form-control" id="password" name="password" placeholder="Password">
+			  			</div>
+			  			<button type="sumbit" class="btn btn-primary btn-lg btn-block">Login</button>
+			  			<button type="reset" class="btn btn-primary btn-lg btn-block">Cancel</button>
+		  	</form>
+		  	<br>
+
+		  	<hr></hr>
+		  				<form action='signup'  class="col-md-4 col-sm-offset-4">
+				<input type="submit" class="btn btn-default btn-lg btn-block" value="Signup">
+			</form>
+
+	  	</div>
+<br>
+
+	  	{% endif %}
+</div>
+
+{%endblock%}
+

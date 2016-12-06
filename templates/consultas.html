@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{%block content%}
+<div class="container">
+<header>Consultas</header>
+<center>
+	<table class="table table-hover">
+		<thead>
+			<td>Número Control</td>
+			<td>Alumno</td>
+			<td>Carrera</td>
+			<td>Generación</td>
+			<td>Correo</td>
+		</thead>
+		 {% for item in object_list %}
+			<tr>
+			<td>{{ item.No_control }}</td>
+			<td>{{ item.Nombre_egresado }} {{ item.App_egresado }} {{ item.Apm_egresado }}</td>
+			<td>{{ item.Carrera }}</td>
+			<td>{{ item.Fecha_ingreso }} - {{ item.Fecha_egreso }}</td>
+ 			<td>{{ item.Correo }}</td>
+ 			<td><a href="/perfil/{{item.pk }}">Perfil</a></td>
+			</tr>
+		{% endfor %}
+	</table>
+</center>
+
+</div>
+{%endblock%}

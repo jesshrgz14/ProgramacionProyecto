@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{%block content%}
+<div class="container">
+<header><h1>Perfil {{list.NC_egresado.Nombre_egresado}} {{list.NC_egresado.App_egresado}}</h1></header>
+	<center>
+	<img src="/media/Egresados_fotos/{{list.Foto}}" height="100" width="100">
+	<p><b>¿Estás titulado?</b> </p>
+	<p>{{list.Titulado}}</p>
+	<p><b>¿Tu trabajo actual se encuentra relacionado con tu carrera?</b></p>
+	<p> {{list.Trabajo_Carrera}}</p>
+	<p><b>Nombre de la empresa donde trabajas:</b></p>
+	<p> {{list.Empresa_trabajo}}</p>
+	<p><b>¿Estudiaste alguna maestría?</b></p>
+	<p>{{list.Maestria}}</p>
+	<p><b>Campo de maestría:</b></p>
+	<p> {{list.Maestria_descripcion}}</p>
+	<p><b>¿Estás estudiando o estudiaste algún doctorado?</b></p>
+	<p> {{list.Doctorado}}</p>
+	<p><b>Campo del doctorado:</b></p>
+	<p> {{list.Doctorado_descripcion}}</p>
+	<p><b>Estudios adicionales:</b></p>
+	<p> {{list.Estudios_adicionales}}</p>
+	<p><b>¿Cuánto tiempo después de egresar duraste en encontrar trabajo?</b></p>
+	<p>{{list.Tiempo_trabajo}}</p>
+
+	<a class="btn btn-success" href="/editar/{{list.pk }}" role="button">Editar Perfil</a>
+	</center>
+	</list>
+</div>
+
+{%endblock%}
